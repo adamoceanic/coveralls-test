@@ -61,6 +61,8 @@ before_install:
   - sudo apt-get update -qq
   - pip install --user cpp-coveralls
   - sudo apt-get install -y -qq build-essential cmake curl lcov
+  - export COVERALLS_SERVICE_NAME=travis-ci
+  - export COVERALLS_REPO_TOKEN=HFjIkl4bLQDk8lFW9ByPsl5x00EhSVy8q
 
 script:
   - mkdir build
