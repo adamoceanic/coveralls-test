@@ -1,3 +1,4 @@
+  - make coveralls
 # Use new trusty images, should yield newer compilers and packages
 sudo: required
 dist: trusty
@@ -66,8 +67,8 @@ script:
   - mkdir build
   - cd build
   - cmake --enable-gcov -DCOVERALLS=ON -DCMAKE_BUILD_TYPE=Debug -DCMAKE_CXX_COMPILER=$COMPILER .. && make
+  - make coveralls
   - ./MyAppTests
-  - ./MyApp
   
-after_success:
-  - coveralls --exclude lib --exclude tests --gcov-options '\-lp'
+after_script:
+  - make coveralls  
