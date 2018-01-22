@@ -1,7 +1,3 @@
-//
-// Created by sapho on 22/01/18.
-//
-
 #include "C1.h"
 
 int C1::ReturnTwo() {

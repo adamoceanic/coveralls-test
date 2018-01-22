@@ -1,4 +1,4 @@
-#include "catch.h"
+#include "catch/catch.h"
 
 #include "../C1.h"
 
@@ -12,7 +12,5 @@ TEST_CASE("Test that ReturnFour does infact return 4", "[SampleTag]") {
     C1 c1;
 
     REQUIRE(c1.ReturnFour() == 4); // Abort test if it fails
-
-
 }
 

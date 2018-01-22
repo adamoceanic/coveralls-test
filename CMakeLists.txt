@@ -58,5 +58,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/build")
 
 add_subdirectory(test)
 
+enable_testing()
+set(CATCH_HEADER_PATH ${PROJECT_SOURCE_DIR}/test/catch/catch.h)
+
+if(BUILD_TESTING)
+    add_executable(MyAppTests test/C1_test.cpp test/main_test.cpp C1.h C1.cpp ${CATCH_HEADER_PATH})
+    message("BUILD_TESTING HIT")
+    add_test(RTEST ${PROJECT_SOURCE_DIR}/build/MyAppTests)
+endif()
+
 set(SOURCE_FILES main.cpp main.cpp C1.cpp C1.h C2.cpp C2.h)
 add_executable(MyApp ${SOURCE_FILES})
